@@ -36,7 +36,10 @@ assertEqual(emptyArrayTail.length, 0);
 
 // Test Case 3: Check the returned array elements
 const result = tail(["Yo Yo", "Lighthouse", "Labs"]);
-assertEqual(result.length, 3);
+tail(words);
+assertEqual(words.length, 3)
+// fix this assertEqual(result.length, 3);
+//Also, remember to check that the tail function does not mutate the original array. You can do this by asserting that the length of the original array remains the same after calling the tail function.
 assertEqual(result.length, 2); // ensure we get back two elements
 assertEqual(result[0], "Lighthouse"); // ensure first element is "Lighthouse"
 assertEqual(result[1], "Labs"); // ensure second element is "Labs"
