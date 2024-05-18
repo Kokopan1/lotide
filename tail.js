@@ -13,13 +13,17 @@ const tail = function(arr1) {
 const words = ["Yo Yo", "Lighthouse", "Labs"];
 console.log(tail(words)); // no need to capture the return value since we are not checking it
 
-const oneElement = ["One element"]; // testing to see if an array with one element should yield an empty array for its tail
+
+// Test to see if an array with one element should yield an empty array for its tail
+const oneElement = ["One element"];
 console.log(tail(oneElement));
+assertEqual(tail(oneElement).length, 0);
 
-const emptyArray = []; //testing to see if an empty array will yield an empty array for its tail
+//Test to see if an empty array will yield an empty array for its tail
+const emptyArray = [];
 console.log(tail(emptyArray));
+assertEqual(tail(emptyArray).length, 0);
 
-console.log(assertEqual(words.length, 3));
 
 // Test Case 1: Check the returned array elements
 const result = tail(["Yo Yo", "Lighthouse", "Labs"]);
