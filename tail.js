@@ -19,6 +19,7 @@ console.log(tail(words)); // no need to capture the return value since we are no
 const oneElement = ["One element"];
 const oneElementTail = tail(oneElement);
 console.log(oneElementTail);
+tail(oneElement);
 assertEqual(oneElementTail.length, 0);
 
 /*
@@ -31,6 +32,7 @@ AI wants it done like above so can avoid calling the same argument all the time
 const emptyArray = [];
 const emptyArrayTail = tail(emptyArray);
 console.log(emptyArrayTail);
+tail(emptyArray);
 assertEqual(emptyArrayTail.length, 0);
 
 
