@@ -14,19 +14,20 @@ const words = ["Yo Yo", "Lighthouse", "Labs"];
 console.log(tail(words)); // no need to capture the return value since we are not checking it
 
 
-// Test to see if an array with one element should yield an empty array for its tail
+// Test Case 1: to see if an array with one element should yield an empty array for its tail
 const oneElement = ["One element"];
 console.log(tail(oneElement));
 assertEqual(tail(oneElement).length, 0);
 
-//Test to see if an empty array will yield an empty array for its tail
+//Test Case 2: to see if an empty array will yield an empty array for its tail
 const emptyArray = [];
 console.log(tail(emptyArray));
 assertEqual(tail(emptyArray).length, 0);
 
 
-// Test Case 1: Check the returned array elements
+// Test Case 3: Check the returned array elements
 const result = tail(["Yo Yo", "Lighthouse", "Labs"]);
+assertEqual(words.length, 3);
 assertEqual(result.length, 2); // ensure we get back two elements
 assertEqual(result[0], "Lighthouse"); // ensure first element is "Lighthouse"
 assertEqual(result[1], "Labs"); // ensure second element is "Labs"
