@@ -10,4 +10,3 @@ assertEqual("Lighthouse Labs", "Bootcamp");
 assertEqual(1, 1);
 assertEqual('Hey', 'Hey');
 assertEqual(1,3);
-//console.assert(actual === expected, "%o", {errorMsg}
