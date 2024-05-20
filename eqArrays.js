@@ -14,7 +14,7 @@ const eqArrays = function(arr1, arr2) {
       }
     }
   } else {
-    return false;
+    return true;
   }
   
 };
@@ -23,6 +23,6 @@ assertEqual(eqArrays([1, 2, 3], [3, 2, 1]), false); // => false
 
 assertEqual(eqArrays(["1", "2", "3"], ["1", "2", "3", "4"]), false); // => true
 assertEqual(eqArrays(["1", "2", "3"], ["1", "2", 3]), false); // => false
-assertEqual(eqArrays([], []), false);
-assertEqual(eqArrays([1, 2], []), true);
+assertEqual(eqArrays([], []), true);
+assertEqual(eqArrays([1, 2], []), false);
 assertEqual(eqArrays([1], [1]), true);
