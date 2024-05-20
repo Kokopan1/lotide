@@ -10,10 +10,10 @@ const eqArrays = function(arr1, arr2) {
 
 const assertArraysEqual = function(expected, actual) {
   if (eqArrays(expected, actual) === true) {
-    console.log(`Assertion Passed : ${actual} === ${expected}.`);
+    console.log(`🟢 Assertion Passed : ${actual} === ${expected}.`);
   } else {
-    console.log(`'Assertion Failed: ${actual} !== ${expected}'`);
+    console.log(`⛔'Assertion Failed: ${actual} !== ${expected}'`);
   }
 };
 
-console.log(assertArraysEqual([1,2], [1,2]));
+assertArraysEqual([1,2], [1,2]);
