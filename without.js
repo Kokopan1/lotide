@@ -33,8 +33,21 @@ const without = function(source, itemsToRemove) {
   return removedItems;
 };
 
-
+// ===== TEST CASE 1: testing number array =====
 console.log(without([1, 2, 3], [1])); // => [2, 3]
 console.log(without(["1", "2", "3"], [1, 2, "3"])); // => ["1", "2"]
 assertArraysEqual(without([1, 2, 3], [1]), [2, 3]); // => [2, 3]
 assertArraysEqual(without(["1", "2", "3"], [1, 2, "3"]), ["1", "2"]); // => ["1", "2"]
+
+// ===== TEST CASE 2: testing string array =====
+const words = ["cat", "panda", "lighthouse"];
+without(words, ["lighthouse"]); // no need to capture return value for this test case
+// Make sure the original array was not altered by the without function
+assertArraysEqual(words, ["panda", "cat", "lighthouse"]); // => should PASS
+
+// ===== TEST CASE 3: testing array modification =====
+const testNumber = [1, 2, 5]
+const compareNumber = [1, 3, 5]
+const testNumberCopy = [...testNumber]//makes copy of test number (spread operator, similar to slice)
+without(testNumber, compareNumber)
+assertArraysEqual(testNumber, testNumberCopy); // we did not modify the OG array
