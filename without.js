@@ -18,17 +18,23 @@ const assertArraysEqual = function(expected, actual) {
   }
 };
 
+
+
 const without = function(source, itemsToRemove) {
   let removedItems = [];
+  //loop through the array
   for (let i = 0; i < source.length; i++) {
-    if(source[i] !== itemsToRemove[i]) {
-     removedItems.push(itemsToRemove[i])
+    //compare the arrays
+    if (source[i] !== itemsToRemove[i]) {
+      //push the non matching source elements out
+      removedItems.push(source[i]);
     }
-    console.log(removedItems)
   }
-  return removedItems
+  return removedItems;
 };
 
-//without([1, 2, 3], [1]); // => [2, 3]
-without(["1", "2", "3"], [1, 2, "3"]); // => ["1", "2"]
-//notes to self --> may need to do a nested loop to compare all values when arrays are different lengths
+
+console.log(without([1, 2, 3], [1])); // => [2, 3]
+console.log(without(["1", "2", "3"], [1, 2, "3"])); // => ["1", "2"]
+
+//how do i use the assetArraysEqual???
