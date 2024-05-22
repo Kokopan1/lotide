@@ -19,8 +19,8 @@ const assertArraysEqual = function(expected, actual) {
 
 // ==== flatten function ====
 const flatten = function(arrToFlatten) {
-    let flattenedArr = arrToFlatten.flat(Infinity) // to flatten out infiinity depth levels in the array
-    return flattenedArr;
+  let flattenedArr = arrToFlatten.flat(Infinity); // to flatten out infiinity depth levels in the array
+  return flattenedArr;
 };
 
 // ===== TEST CASE 1: testing number array =====
