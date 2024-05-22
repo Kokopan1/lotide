@@ -46,8 +46,8 @@ without(words, ["lighthouse"]); // no need to capture return value for this test
 assertArraysEqual(words, ["panda", "cat", "lighthouse"]); // => should PASS
 
 // ===== TEST CASE 3: testing array modification =====
-const testNumber = [1, 2, 5]
-const compareNumber = [1, 3, 5]
-const testNumberCopy = [...testNumber]//makes copy of test number (spread operator, similar to slice)
-without(testNumber, compareNumber)
+const testNumber = [1, 2, 5];
+const compareNumber = [1, 3, 5];
+const testNumberCopy = [...testNumber];//makes copy of test number (spread operator, similar to slice)
+without(testNumber, compareNumber);
 assertArraysEqual(testNumber, testNumberCopy); // we did not modify the OG array
