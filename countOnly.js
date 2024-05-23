@@ -10,7 +10,7 @@ const assertEqual = function(actual, expected) {
 //The function should report back how many instances of each string were found in the allItems array of strings
 
 //Our function countOnly needs to return a proper report on all the strings found in the input array, and their respective counts. Therefore it will need to return an object that can represent the stats.
-const countOnly = function (allItems, itemsToCount) {
+const countOnly = function(allItems, itemsToCount) {
   const results = {};
 
   for (const item of allItems) {
