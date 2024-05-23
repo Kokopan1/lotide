@@ -23,11 +23,23 @@ const countLetters = function(strings) {
 };
 console.log(countLetters('heeey there'));
 
-//it sums the number of times a letter appears in a given string
-assertEqual()
+//purpose of function --> it sums the number of times a letter appears in a given string
 
+
+// ==== Test 1: Letters ====
 const test1 = countLetters('hey');
 assertEqual(test1.h, 1);
 
-const test 2 = countLetters('1 2 3 3 3 34 hohoho')
-assertEqual(test1.h, 3);
+
+// ==== Test 2: Add Numbers to string ====
+const test2 = countLetters('1 2 3 3 3 34 hohoho');
+assertEqual(test2.h, 3);
+
+
+// ==== Test 3: String of numbers ===
+const test3 = countLetters(' 1 1 1');
+assertEqual(test3[3], undefined);
+
+// ==== Test 4: Letter not in string ===
+const test4 = countLetters('hey');
+assertEqual(test4.l, undefined);
