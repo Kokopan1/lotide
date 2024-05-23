@@ -9,17 +9,17 @@ const assertEqual = function(actual, expected) {
 //For example, countLetters('LHL') should return results indicating that L appears twice, and H once.
 
 const countLetters = function(strings) {
-  let results = {}
+  let objKeyLetter = {}
   for (const letter of strings) {
-    if (results[item]) {
-      results[item] += 1;
+    if (!objKeyLetter[letter]) {
+      objKeyLetter[letter] += 1;
     } else {
-      results[item] = 1;
+      objKeyLetter[letter] = 1;
     }
     
   }
   
-  return results
+  return objKeyLetter
 };
 console.log(countLetters('heeey there'))
 
