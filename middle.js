@@ -21,25 +21,31 @@ const middle = function(array) {
   let middleNum = [];
   let middleLow = [];
   let middleHi = [];
-
+  //find if array length is under/equal to 2
   if (array.length <= 2) {
-    return middleNum
-  } else if (array.length%2 != 0) {
+    return middleNum;
+    //find if array length is odd
+  } else if (array.length % 2 !== 0) {
     middleNum.push(array[Math.round((array.length - 1) / 2)]);
-    //console.log(middleNum)
+
+    //the array length is even
   } else {
+    //find the middle bottom of the arr length
     middleLow.push(array[Math.floor((array.length - 1) / 2)]);
+    //find the middle top of the arr length
     middleHi.push(array[Math.ceil((array.length - 1) / 2)]);
+    // add the two together
     middleNum = middleLow.concat(middleHi);
   }
   return middleNum;
 };
 
-console.log(middle([1,2,3,5,6]))
-console.log(middle([1]))
-console.log(middle([1, 2]))
-console.log(middle([1, 2, 3]))
-console.log(middle([1, 2, 3, 4]))
+// ==== Test Output ====
+console.log(middle([1,2,3,5,6]));
+console.log(middle([1]));
+console.log(middle([1, 2]));
+console.log(middle([1, 2, 3]));
+console.log(middle([1, 2, 3, 4]));
 
 
 // ===== TEST CASE 1: Testing Number Array =====
