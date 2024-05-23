@@ -18,26 +18,29 @@ const assertArraysEqual = function(expected, actual) {
 
 
 // ==== flatten function ====
-const flatten = function(arrToFlatten) {
-  if (Array.isArray(arrToFlatten)) {
-    let flattenedArr = arrToFlatten.flat(Infinity); // to flatten out infiinity depth levels in the array
+const toFlatten = (arrToFlatten) => {
+
+};
+
+// ===== TEST CASE 1: testing number array =====
+console.log(toFlatten([1, 2, [3, 4]])); // => [1, 2, 3, 4]
+assertArraysEqual(toFlatten([1, 2, [3, 4]]), [1, 2, 3, 4]); // => [2, 3]
+
+// ==== Test Case 2: Testing If It Is An Array ====
+//console.log(flatten('lighthouse'));
+
+
+// ===== TEST CASE 3: testing array modification =====
+//const testNumber = [1, 2, 5];
+//const compareNumber = [1, 3, 5];
+//const testNumberCopy = [...testNumber];//makes copy of test number (spread operator, similar to slice)
+//flatten(testNumber, compareNumber);
+//assertArraysEqual(testNumber, testNumberCopy); // we did not modify the OG array
+
+//flatten
+/*let flattenedArr = arrToFlatten.flat(Infinity); // to flatten out infiinity depth levels in the array
     return flattenedArr;
   } else {
     return "not an array";
   }
-};
-
-// ===== TEST CASE 1: testing number array =====
-console.log(flatten([1, 2, [3, 4, [5]]])); // => [1, 2, 3, 4, 5]
-assertArraysEqual(flatten([1, 2, [3, 4, [5]]]), [1, 2, 3, 4, 5]); // => [2, 3]
-
-// ==== Test Case 2: Testing If It Is An Array ====
-console.log(flatten('lighthouse'));
-
-
-// ===== TEST CASE 3: testing array modification =====
-const testNumber = [1, 2, 5];
-const compareNumber = [1, 3, 5];
-const testNumberCopy = [...testNumber];//makes copy of test number (spread operator, similar to slice)
-flatten(testNumber, compareNumber);
-assertArraysEqual(testNumber, testNumberCopy); // we did not modify the OG array
+*/
