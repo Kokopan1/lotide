@@ -1,47 +1,57 @@
-//which will return all the indices (zero-based positions) in the string where each character is found.
+const assertEqual = function(actual, expected) {
+  if (actual === expected) {
+    console.log(`Assertion Passed : ${actual} === ${expected}. 👌👌👌`);
+  } else {
+    console.log(`'Assertion Failed: ${actual} !== ${expected}'`);
+  }
+};
+
+const assertArraysEqual = function(expected, actual) {
+  if (eqArrays(expected, actual)) {
+    console.log(`🟢 Assertion Passed : ${expected} === ${actual}.`);
+  } else {
+    console.log(`⛔ Assertion Failed: ${expected} !== ${actual}.`);
+  }
+};
 
 
-// maybe use a push on the zero-based position?
-//const indexOfFirst = paragraph.indexOf(searchTerm);
-
-// if the character is x, return index position of where x is
-/*
-ToDo
-first we have to find the character
-if there is no character, we have to create a character property and the array, we have to push? the item to the array
-if we have a character property then we just have to add the index value to the array
-*/
+// ==== letterPositions Function ======
 const letterPositions = function(strings) {
   let objKeyLetter = {};
-  let objKeyNumber = []
+  
   
   for (let i = 0; i < strings.length; i++){
-    //console.log([i])
-    if (!objKeyLetter[strings[i]]) {
-       objKeyLetter[strings[i]] = objKeyNumber.push(i)
-       console.log(objKeyLetter)
-    } else {
-      objKeyLetter[strings[i]] += objKeyNumber.push(i)
-    }
-  }
-  //delete objKeyLetter[' ']; //delete the space, dont need it
-  //return objKeyLetter;
-};
-console.log(letterPositions('hi ho'));
-
-/*
-const countLetters = function(strings) {
-  let objKeyLetter = {};
-  for (const letter of strings) {
-    if (!objKeyLetter[letter]) {
-      objKeyLetter[letter] = 1; //if objKeyLetter is false = not there, then initialze it
-    } else {
-      objKeyLetter[letter]++; //if its there, add 1
-    }
     
+    if (!objKeyLetter[strings[i]]) {
+       objKeyLetter[strings[i]] = [i] //if objKeyLetter is false = not there, then initialze it with an array
+       
+    } else {
+      objKeyLetter[strings[i]].push(i) // if its there, push index into the array
+    }
   }
   delete objKeyLetter[' ']; //delete the space, dont need it
   return objKeyLetter;
 };
-console.log(countLetters('heeey there'));
-*/
+console.log(letterPositions('hii cutie'));
+
+//Syntax
+//initiate new variable = call function (string to analyze)
+//call assertEqual on (newVarialbe.key, expected output);
+
+// ==== Test 1: Letters ====
+const test1 = countLetters('hey');
+assertEqual(test1.h, 1);
+
+
+// ==== Test 2: Add Numbers to string ====
+const test2 = countLetters('1 2 3 3 3 34 hohoho');
+assertEqual(test2.h, 3);
+
+
+// ==== Test 3: String of numbers ===
+const test3 = countLetters(' 1 1 1');
+assertEqual(test3['1'], 3);
+
+// ==== Test 4: Letter not in string ===
+const test4 = countLetters('hey');
+assertEqual(test4.l, undefined);
