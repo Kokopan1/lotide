@@ -8,35 +8,26 @@ const assertEqual = function(actual, expected) {
 
 
 
-const findKeyByValue = function (tvShow, showName) {
+const findKeyByValue = function(tvShow, showName) {
   let genre = 0;
   for (const key of Object.keys(bestTVShowsByGenre)) {
     //console.log(key, bestTVShowsByGenre[key]);
-     if (bestTVShowsByGenre[key] === showName) {
-      genre = key
+    if (bestTVShowsByGenre[key] === showName) {
+      genre = key;
       
     }
   
   }
-  return genre
+  return genre;
 };
 
 const bestTVShowsByGenre = {
-  sci_fi: "The Expanse",
+  'sci_fi': "The Expanse",
   comedy: "Brooklyn Nine-Nine",
   drama: "The Wire",
 };
- /*
-for (const key of Object.keys(bestTVShowsByGenre)) {
-  console.log(key, bestTVShowsByGenre[key]);
-  for (let i = 0; i < bestTVShowsByGenre.length; i++)
-    { if (bestTVShowsByGenre[key] === tvShow) {
-    return [i]
-  }
-}
-}
-*/
-console.log(findKeyByValue(bestTVShowsByGenre, "The Wire"))
+
+console.log(findKeyByValue(bestTVShowsByGenre, "The Wire"));
 
 // ==== Test 1: A Matching and Unmatching String ====
 assertEqual(findKeyByValue(bestTVShowsByGenre, "The Wire"), "drama");
