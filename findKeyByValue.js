@@ -10,10 +10,10 @@ const assertEqual = function(actual, expected) {
 
 const findKeyByValue = function(tvShow, showName) {
   
-  for (const key of Object.keys(tvShow)) {
-    
-    if (tvShow[key] === showName) {
-      return key; 
+  for (const key of Object.keys(tvShow)) { //cycle through keys of object
+
+    if (tvShow[key] === showName) { //if key = argument, return key
+      return key;  //inside loop to break after first match
     }
 
   }
