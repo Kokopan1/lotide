@@ -38,7 +38,7 @@ assertEqual(test2.h, 3);
 
 // ==== Test 3: String of numbers ===
 const test3 = countLetters(' 1 1 1');
-assertEqual(test3[3], undefined);
+assertEqual(test3['1'], 3);
 
 // ==== Test 4: Letter not in string ===
 const test4 = countLetters('hey');
