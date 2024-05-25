@@ -31,6 +31,12 @@ const map = function (array, callback) {
 const results1 = map(words, (word) => word[0]);
 console.log(results1);
 
-// ==== Test 1: ====
-// ==== Test 2: ====
-// ==== Test 3: ====
+
+// ==== Test 1:  Letters Pass ====
+assertEqual(results1["g"], "g");
+
+// ==== Test 2: Letters Failed ====
+assertEqual(results1["g"], "c");
+
+// ==== Test 3: Number Failed ====
+assertEqual(results1[0], "g");
