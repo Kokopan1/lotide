@@ -30,7 +30,7 @@ const map = function (array, callback) {
 
 //                   (array, callback -> function called on e/ element in array)
 const results1 = map(words, (word) => word[0]);
-//console.log(results1);
+console.log(results1);
 
 
 // ==== Test 1:  Letters Pass ====
@@ -50,3 +50,10 @@ const mixed = [1, 'goat', 3]
 
 const results3 = map(mixed, (word) => word[0]);
 assertArraysEqual(results3, [,'g',,]);
+
+// ====  Test 4: =====
+
+const hey = ['hello', 'everyone', 'love', 'lemons', 'okay']
+const results4 = map(hey, (x) => x[0]);
+console.log(results4)
+assertArraysEqual(results4, ['h','e','l','l','o']);
