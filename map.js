@@ -8,13 +8,14 @@ const eqArrays = function(arr1, arr2) {
   } return false;
 };
 
-const assertEqual = function(actual, expected) {
-  if (actual === expected) {
-    console.log(`Assertion Passed : ${actual} === ${expected}. 👌👌👌`);
+const assertArraysEqual = function(expected, actual) {
+  if (eqArrays(expected, actual)) {
+    console.log(`🟢 Assertion Passed : ${expected} === ${actual}.`);
   } else {
-    console.log(`'Assertion Failed: ${actual} !== ${expected}'`);
+    console.log(`⛔ Assertion Failed: ${expected} !== ${actual}.`);
   }
 };
+
 
 
 const words = ["ground", "control", "to", "major", "tom"];
@@ -29,14 +30,23 @@ const map = function (array, callback) {
 
 //                   (array, callback -> function called on e/ element in array)
 const results1 = map(words, (word) => word[0]);
-console.log(results1);
+//console.log(results1);
 
 
 // ==== Test 1:  Letters Pass ====
-assertEqual(results1["g"], "g");
 
-// ==== Test 2: Letters Failed ====
-assertEqual(results1["g"], "c");
+const expectedOutput = ['g', 'c', 't', 'm', 't'];
+assertArraysEqual(results1, expectedOutput);
 
-// ==== Test 3: Number Failed ====
-assertEqual(results1[0], "g");
+// ==== Test 2: Numbers Pass ====
+const numb = [1, 2, 3, 4]
+
+const results2 = map(numb, (word) => word[0]);
+assertArraysEqual(results2,[,,,,]);
+
+
+// ==== Test 3: Mix Number and Letters Pass ====
+const mixed = [1, 'goat', 3]
+
+const results3 = map(mixed, (word) => word[0]);
+assertArraysEqual(results3, [,'g',,]);
