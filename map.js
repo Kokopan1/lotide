@@ -38,22 +38,21 @@ console.log(results1);
 const expectedOutput = ['g', 'c', 't', 'm', 't'];
 assertArraysEqual(results1, expectedOutput);
 
-// ==== Test 2: Numbers Pass ====
+// ==== Test 2: Numbers Multiply Pass ====
 const numb = [1, 2, 3, 4]
 
-const results2 = map(numb, (word) => word[0]);
-assertArraysEqual(results2,[,,,,]);
+const results2 = map(numb, (num) => num * 2.);
+assertArraysEqual(results2,[2, 4, 6, 8]);
 
 
-// ==== Test 3: Mix Number and Letters Pass ====
+// ==== Test 3: Mix Number and Letters Will be Undefined ====
 const mixed = [1, 'goat', 3]
 
 const results3 = map(mixed, (word) => word[0]);
 assertArraysEqual(results3, [,'g',,]);
 
-// ====  Test 4: =====
+// ====  Test 4: Number Divide Pass =====
 
-const hey = ['hello', 'everyone', 'love', 'lemons', 'okay']
-const results4 = map(hey, (x) => x[0]);
-console.log(results4)
-assertArraysEqual(results4, ['h','e','l','l','o']);
+const numDivide = [2, 4, 6, 8]
+const results4 = map(numDivide, (num) => num / 2);
+assertArraysEqual(results4, [1, 2, 3, 4]);
