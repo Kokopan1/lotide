@@ -27,32 +27,33 @@ Our control flow will therefore only get to the end of the loop if all the keys 
 */
 
 const eqObjects = function (object1, object2) {
-  //let obj1KeyNum = Object.keys(object1)
-  //let obj2KeyNum = Object.keys(object2)
-  //let objVal1 = Object.values(object2)
-  //let objVal2 = Object.values(object2)
+
    if (Object.keys(object1).length !== Object.keys(object2).length) {;
     return false
    } else {
-    for (const key of Object.keys(object1)) {
-      if (Object.keys(object1).key === Object.keys(object2).key) {
+    for (const value of Object.keys(object1)) {
+       if (Object.keys(object1).value === Object.keys(object2).value) {
+        console.log(Object.keys(object1).value )
         return true
-      } else {
+       } else {
         return false
       }
     }
    }
-  
 };
 
+// ===== Test 1: Same Object Key:Value =====
+const shirtObject = { color: "red", size: "medium", material : "cotton", category: "woman"};
+const anotherShirtObject = { size: "medium", color: "red", material : "cotton", category: "woman"};
+eqObjects(shirtObject, anotherShirtObject); // => true
+assertEqual(eqObjects(shirtObject, anotherShirtObject), true);
 
+// ===== Test 2: Different Object Key Length =====
+const longSleeveShirtObject = { size: "medium", color: "red", sleeveLength: "long", material : "cotton", category: "woman"};
+eqObjects(shirtObject, longSleeveShirtObject); // => false
+assertEqual(eqObjects(shirtObject, longSleeveShirtObject), false);
 
-const shirtObject = { color: "red", size: "medium" };
-const anotherShirtObject = { size: "medium", color: "red" };
-
-console.log(eqObjects(shirtObject, anotherShirtObject))
-// They have the same number of keys
-//The value for each key in one object is the same as the value for that same key in the other object
-
-//const obj = { 0: "a", 1: "b", 2: "c" };
-//console.log(Object.keys(obj)); // ['0', '1', '2']
+// ===== Test 3 : Different Object Key Value =====
+const noSleeves = { size: "large", color: "red",  material : "cotton", category: "woman"}
+eqObjects(shirtObject, noSleeves); // => false
+assertEqual(eqObjects(shirtObject, noSleeves), false);
