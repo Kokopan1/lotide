@@ -26,19 +26,19 @@ Our control flow will therefore only get to the end of the loop if all the keys 
 
 */
 
+// Check if the number of keys in both objects are the same
 const eqObjects = function (object1, object2) {
-
+    let obj1Keys = Object.keys(object1)
+    let obj2Keys = Object.keys(object2)
    if (Object.keys(object1).length !== Object.keys(object2).length) {;
-    return false
+    return false;  //if key length is not the same, return false
    } else {
-    for (const value of Object.keys(object1)) {
-       if (Object.keys(object1).value === Object.keys(object2).value) {
-        console.log(Object.keys(object1).value )
-        return true
-       } else {
-        return false
+    for (const keys of obj1Keys) {  //iterates over keys in obj1Key to see if the key:value match object2
+       if (object1[keys] !== object2[keys]) {  
+        return false; 
       }
     }
+    return true;
    }
 };
 
@@ -57,3 +57,16 @@ assertEqual(eqObjects(shirtObject, longSleeveShirtObject), false);
 const noSleeves = { size: "large", color: "red",  material : "cotton", category: "woman"}
 eqObjects(shirtObject, noSleeves); // => false
 assertEqual(eqObjects(shirtObject, noSleeves), false);
+
+
+// ====== Arrays As Values Test ====
+const multiColorShirtObject = { colors: ["red", "blue"], size: "medium" };
+const anotherMultiColorShirtObject = { size: "medium", colors: ["red", "blue"] };
+eqObjects(multiColorShirtObject, anotherMultiColorShirtObject); // => true
+
+const longSleeveMultiColorShirtObject = {
+  size: "medium",
+  colors: ["red", "blue"],
+  sleeveLength: "long",
+};
+eqObjects(multiColorShirtObject, longSleeveMultiColorShirtObject); // => false
