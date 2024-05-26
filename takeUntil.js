@@ -21,10 +21,8 @@ const takeUntil = function(array, callback) {
   for (let elements of array) {
     if (!callback(elements))
       results.push(elements);
-    else if (callback) {
+    else
       break;
-    }
-
   }
   return results;
 };
