@@ -32,12 +32,12 @@ const eqObjects = function(object1, object2) {
     let obj1Value = object1[key];
     let obj2Value = object2[key];
 
-    if (Array.isArray(obj1Value) && Array.isArray(obj2Value)) {
+    if (Array.isArray(object1[key]) && Array.isArray(object2[key])) {
       // Checks if both values are arrays
-      if (!eqArrays(obj1Value, obj2Value)) {
+      if (!eqArrays(object1[key], object2[key])) {
         return false;
       }
-    } else if (obj1Value !== obj2Value) {
+    } else if (object1[key] !== object2[key]) {
       //If not Array, they are Primitives
       return false;
     }
