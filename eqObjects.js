@@ -29,9 +29,6 @@ const eqObjects = function(object1, object2) {
   for (const key of obj1Keys) {
     //iterates over keys in obj1Key to see if the key:value match object2
 
-    let obj1Value = object1[key];
-    let obj2Value = object2[key];
-
     if (Array.isArray(object1[key]) && Array.isArray(object2[key])) {
       // Checks if both values are arrays
       if (!eqArrays(object1[key], object2[key])) {
