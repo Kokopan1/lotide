@@ -18,22 +18,28 @@ const assertEqual = function(actual, expected) {
 
 
 // Check if the number of keys in both objects are the same
-const eqObjects = function (object1, object2) {
-  let obj1Keys = Object.keys(object1)
-  let obj2Keys = Object.keys(object2)
-  if (obj1Keys.length !== obj2Keys.length) {;
+const eqObjects = function(object1, object2) {
+  let obj1Keys = Object.keys(object1);
+  let obj2Keys = Object.keys(object2);
+
+  if (obj1Keys.length !== obj2Keys.length) {
     return false;  //if key length is not the same, return false
   }
 
-  for (const key of obj1Keys) {  //iterates over keys in obj1Key to see if the key:value match object2
-    let obj1Value = object1[key]
-    let obj2Value = object2[key]
-    if (Array.isArray(obj1Value) && Array.isArray(obj2Value)) {  // Checks if both values are arrays
+  for (const key of obj1Keys) {
+    //iterates over keys in obj1Key to see if the key:value match object2
+
+    let obj1Value = object1[key];
+    let obj2Value = object2[key];
+
+    if (Array.isArray(obj1Value) && Array.isArray(obj2Value)) {
+      // Checks if both values are arrays
       if (!eqArrays(obj1Value, obj2Value)) {
         return false;
       }
-    } else if (obj1Value !== obj2Value) {  //If not Array, they are Primitives
-      return false; 
+    } else if (obj1Value !== obj2Value) {
+      //If not Array, they are Primitives
+      return false;
     }
   }
   return true;
@@ -52,7 +58,7 @@ eqObjects(shirtObject, longSleeveShirtObject); // => false
 assertEqual(eqObjects(shirtObject, longSleeveShirtObject), false);
 
 // ===== Test 3 : Different Object Key Value =====
-const noSleeves = { size: "large", color: "red",  material : "cotton", category: "woman"}
+const noSleeves = { size: "large", color: "red",  material : "cotton", category: "woman"};
 eqObjects(shirtObject, noSleeves); // => false
 assertEqual(eqObjects(shirtObject, noSleeves), false);
 
@@ -68,6 +74,6 @@ const longSleeveMultiColorShirtObject = {
   sleeveLength: "long",
 };
 
-eqObjects(multiColorShirtObject, longSleeveMultiColorShirtObject); 
+eqObjects(multiColorShirtObject, longSleeveMultiColorShirtObject);
 assertEqual(eqObjects(multiColorShirtObject, anotherMultiColorShirtObject), true);
 assertEqual(eqObjects(multiColorShirtObject, longSleeveMultiColorShirtObject), false);
