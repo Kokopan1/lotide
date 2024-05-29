@@ -27,7 +27,7 @@ console.log(countLetters('heeey there'));
 
 //Syntax
 //initiate new variable = call function (string to analyze)
-//call assertEqual on (newVarialbe.key, expected output)
+//call assertEqual on (newVarialbe.key, expected output);
 
 // ==== Test 1: Letters ====
 const test1 = countLetters('hey');

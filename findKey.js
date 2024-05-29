@@ -18,7 +18,7 @@ const findKey = function( object, callbackTruthy) {
   */
 };
 
-//this is an example
+//this is an example put in your own values later
 findKey(
   {
     "Blue Hill": { stars: 1 },
