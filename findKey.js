@@ -16,7 +16,13 @@ const findKey = function( object, callbackTruthy) {
   return undefined
   
   */
+ if (scanCallback) {
+  return true
+ } else {
+  return undefined
+ }
 };
+
 
 //this is an example put in your own values later
 findKey(
