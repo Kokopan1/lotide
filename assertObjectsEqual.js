@@ -1,3 +1,13 @@
+const eqArrays = function(arr1, arr2) {
+  if (arr1.length === arr2.length) {
+    for (let i = 0; i < arr1.length; i++) {
+      if (arr1[i] !== arr2[i]) {
+        return false;
+      }
+    } return true;
+  } return false;
+};
+
 const eqObjects = function(object1, object2) {
   const obj1Keys = Object.keys(object1);
   const obj2Keys = Object.keys(object2);
@@ -23,7 +33,7 @@ const eqObjects = function(object1, object2) {
    
 };
 
-const assertObjectsEqual = function (actual, expected) {
+const assertObjectsEqual = function(actual, expected) {
   const inspect = require("util").inspect;
   if (eqObjects(actual, expected)) {  //returns true or false statement
     console.log(`Assertion Passed : ${inspect(actual)} === ${inspect(expected)}. 👌👌👌`);
@@ -37,12 +47,12 @@ const assertObjectsEqual = function (actual, expected) {
 const cat1Char = { color: 'grey', weight : '5lbs', earType : 'floppy'};
 const cat2Char = { color: ['white', 'brown'], weight : '5lbs', earType : 'floppy'};
 const cat3Char = { color: 'grey', weight : '5lbs', earType : 'floppy'};
-const cat4Char = { color: 'grey', weight : '5lbs', earType : 'floppy', purSound : 'loud'}
+const cat4Char = { color: 'grey', weight : '5lbs', earType : 'floppy', purSound : 'loud'};
 const cat5Char = { color: 'black', weight : '5lbs', earType : 'floppy'};
 
 
 // ==== Test Same Characteristics ====
-assertObjectsEqual(cat1Char, cat3Char); 
+assertObjectsEqual(cat1Char, cat3Char);
 // returns the actual and expected in the past condition aka will show you the objects key-value pairs for visual confirmation
 
 // ==== Test Different Characteristics ====
