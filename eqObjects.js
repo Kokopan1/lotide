@@ -43,36 +43,20 @@ const eqObjects = function(object1, object2) {
    
 };
 
-// ===== Test 1: Same Object Key:Value =====
-const shirtObject = { color: "red", size: "medium", material : "cotton", category: "woman"};
-const anotherShirtObject = { size: "medium", color: "red", material : "cotton", category: "woman"};
 
-assertEqual(eqObjects(shirtObject, anotherShirtObject), true);
+const cat1Char = { color: 'grey', weight : '5lbs', earType : 'floppy'};
+const cat2Char = { color: ['white', 'brown'], weight : '5lbs', earType : 'floppy'};
+const cat3Char = { color: 'grey', weight : '5lbs', earType : 'floppy'};
+const cat4Char = { color: 'grey', weight : '5lbs', earType : 'floppy', purSound : 'loud'}
+const cat5Char = { color: 'black', weight : '5lbs', earType : 'floppy'};
+// ==== Test 1: Same Characteristics ====
+assertEqual(eqObjects((cat1Char), (cat3Char)), true);
 
+// ==== Test 2:  Different Characteristics ====
+assertEqual(eqObjects(cat1Char, cat2Char), false);
 
-// ===== Test 2: Different Object Key Length =====
-const longSleeveShirtObject = { size: "medium", color: "red", sleeveLength: "long", material : "cotton", category: "woman"};
+// ==== Test 3: Characterisitics with Different Length ====
+assertEqual(eqObjects(cat1Char, cat4Char), false);
 
-assertEqual(eqObjects(shirtObject, longSleeveShirtObject), false);
-
-
-// ===== Test 3 : Different Object Key Value =====
-const noSleeves = { size: "large", color: "red",  material : "cotton", category: "woman"};
-
-assertEqual(eqObjects(shirtObject, noSleeves), false);
-
-
-// ====== Arrays As Values Test ====
-const multiColorShirtObject = { colors: ["red", "blue"], size: "medium" };
-const anotherMultiColorShirtObject = { size: "medium", colors: ["red", "blue"] };
-eqObjects(multiColorShirtObject, anotherMultiColorShirtObject); // => true
-
-const longSleeveMultiColorShirtObject = {
-  size: "medium",
-  colors: ["red", "blue"],
-  sleeveLength: "long",
-};
-
-
-assertEqual(eqObjects(multiColorShirtObject, anotherMultiColorShirtObject), true);
-assertEqual(eqObjects(multiColorShirtObject, longSleeveMultiColorShirtObject), false);
+// ==== Test4:  Characterisitics with Different Values ====
+assertEqual(eqObjects(cat1Char, cat5Char), false);

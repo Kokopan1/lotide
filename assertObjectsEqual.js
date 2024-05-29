@@ -26,16 +26,31 @@ const eqObjects = function(object1, object2) {
 const assertObjectsEqual = function (actual, expected) {
   const inspect = require("util").inspect;
   if (actual === expected) {
-    console.log(`Assertion Passed : ${actual} === ${expected}. 👌👌👌`);
+    console.log(`Assertion Passed : ${inspect(actual)} === ${inspect(expected)}. 👌👌👌`);
   } else {
-    console.log(`'Assertion Failed: ${actual} !== ${expected}'`);
+    console.log(`'Assertion Failed: ${inspect(actual)} !== ${inspect(expected)}'`);
   }
 };
 
-console.log(`Example label: ${inspect(actual)}`);
+//console.log(`Example label: ${inspect(actual)}`);
 
 const cat1Char = { color: 'grey', weight : '5lbs', earType : 'floppy'};
 const cat2Char = { color: ['white', 'brown'], weight : '5lbs', earType : 'floppy'};
 const cat3Char = { color: 'grey', weight : '5lbs', earType : 'floppy'};
 const cat4Char = { color: 'grey', weight : '5lbs', earType : 'floppy', purSound : 'loud'}
+const cat5Char = { color: 'black', weight : '5lbs', earType : 'floppy'};
+// ==== Test Same Characteristics ====
+assertObjectsEqual(eqObjects((cat1Char), (cat3Char)), true);
+
+// ==== Test Different Characteristics ====
+assertObjectsEqual(eqObjects(cat1Char, cat2Char), false);
+
+// ==== Test Characterisitics with Different Length ====
+assertObjectsEqual(eqObjects(cat1Char, cat4Char), false);
+
+// ==== Test Characterisitics with Different Values ====
+assertObjectsEqual(eqObjects(cat1Char, cat5Char), false);
+
+
+
 
