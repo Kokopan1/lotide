@@ -7,24 +7,15 @@ const assertEqual = function(actual, expected) {
 };
 
 //Implement the function findKey which takes in an object and a callback. It should scan the object and return the first key for which the callback returns a truthy value. If no key is found, then it should return undefined.
-const findKey = function( object, callbackTruthy) {
-  //this is similar to the project before
-  // need object key
-  // need for (const key of object) maybe or just object[key]
-  /* loop to scan the object and return the first key which the callback returns a truthy , if true, return first key
-  else no key found
-  return undefined
-  
-  */
- if (scanCallback) {
-  return true
- } else {
-  return undefined
- }
-};
+const findKey = function(obj, callback) { 
+  for (const key in obj) {
+    console.log(key)
+  }
+}
 
 
-//this is an example put in your own values later
+
+
 findKey(
   {
     "Blue Hill": { stars: 1 },
@@ -35,4 +26,5 @@ findKey(
     Akelarre: { stars: 3 },
   },
   (x) => x.stars === 2
-); // => "noma"
+); 
+// => "noma"
