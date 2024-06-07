@@ -1,4 +1,8 @@
+// Import Function
+
 const assertEqual = require("../assertEqual");
+
+
 
 //  ==== Test 1: Test Strings Failed ====
 assertEqual("Lighthouse Labs", "Bootcamp");
