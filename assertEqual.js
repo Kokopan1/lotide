@@ -1,4 +1,4 @@
-
+// Function Check Actual vs Expected
 const assertEqual = function(actual, expected) {
   if (actual === expected) {
     console.log(`Assertion Passed : ${actual} === ${expected}. 👌👌👌`);
@@ -7,4 +7,5 @@ const assertEqual = function(actual, expected) {
   }
 };
 
+// Export Function
 module.exports = assertEqual;
