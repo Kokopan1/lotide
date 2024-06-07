@@ -7,6 +7,7 @@ const assertEqual = function(actual, expected) {
   }
 };
 
+/*
 //  ==== Test 1: Test Strings Failed ====
 assertEqual("Lighthouse Labs", "Bootcamp");
 
@@ -18,3 +19,5 @@ assertEqual('Hey', 'Hey');
 
 //  ==== Test 4: Test Number Failed ====
 assertEqual(1,3);
+*/
+module.exports = assertEqual;
