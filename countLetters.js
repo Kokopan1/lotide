@@ -46,3 +46,5 @@ assertEqual(test3['1'], 3);
 // ==== Test 4: Letter not in string ===
 const test4 = countLetters('hey');
 assertEqual(test4.l, undefined);
+
+module.exports = countLetters;

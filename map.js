@@ -56,3 +56,5 @@ assertArraysEqual(results3, [,'g',,]);
 const numDivide = [2, 4, 6, 8]
 const results4 = map(numDivide, (num) => num / 2);
 assertArraysEqual(results4, [1, 2, 3, 4]);
+
+module.exports = map;

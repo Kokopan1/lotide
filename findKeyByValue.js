@@ -34,3 +34,5 @@ assertEqual(findKeyByValue(bestTVShowsByGenre, "That '70s Show"), undefined);
 
 // ==== Test 2: Not A String ====
 assertEqual(findKeyByValue(bestTVShowsByGenre, 5), undefined);
+
+module.exports = findKeyByValue;

@@ -51,3 +51,5 @@ const compareNumber = [1, 3, 5];
 const testNumberCopy = [...testNumber];//makes copy of test number (spread operator, similar to slice)
 without(testNumber, compareNumber);
 assertArraysEqual(testNumber, testNumberCopy); // we did not modify the OG array
+
+module.exports = without;

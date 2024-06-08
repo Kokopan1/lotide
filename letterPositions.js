@@ -49,3 +49,5 @@ assertArraysEqual(test1.h, [0]);
 // ==== Test 2: String of numbers ===
 const test3 = letterPositions(' 1 1 1');
 assertArraysEqual(test3['1'], [1, 3, 5]);
+
+module.exports = letterPositions;

@@ -60,3 +60,5 @@ assertEqual(eqObjects(cat1Char, cat4Char), false);
 
 // ==== Test4:  Characterisitics with Different Values ====
 assertEqual(eqObjects(cat1Char, cat5Char), false);
+
+module.exports = eqObjects;

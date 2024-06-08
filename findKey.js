@@ -64,3 +64,6 @@ assertEqual(findKey(
   },
   (x) => x.furColor === 4
 ), undefined);
+
+
+module.exports = findKey;

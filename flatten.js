@@ -49,3 +49,5 @@ const testNumber = [1, 2, [5,6]];
 const testNumberCopy = [...testNumber];//makes copy of test number (spread operator, similar to slice)
 console.log(flatten(testNumberCopy));
 assertArraysEqual(testNumberCopy, testNumber); // we did not modify the OG array
+
+module.exports = flatten;

@@ -67,3 +67,4 @@ assertObjectsEqual(cat1Char, cat5Char);
 
 // note to me, its not assertObjectsEqual(eqObjects(cat1Char, cat2Char), false) --> this just returns a truthy or falsy, for this we dont want truthy or false we want a visual comparision of the actual objects
 
+module.exports = assertObjectsEqual;
