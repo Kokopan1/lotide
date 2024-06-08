@@ -1,28 +1,28 @@
-// Import Functions
 
-const assertArraysEqual = require("../assertArraysEqual");
-const middle = require("../middle");
+//Import Functions
+const assert = require('chai').assert;
+const middle   = require('../middle');
 
+describe("#middle", () => {
+  // ===== TEST CASE 1: Testing Number Array =====
+  it("returns [2, 3] for [1, 2, 3, 4]", () => {
+    assert.deepEqual(middle([1, 2, 3, 4]), [2, 3]);
+  });
 
-// ==== Test Output ====
-console.log(middle([1,2,3,5,6]));
-console.log(middle([1]));
-console.log(middle([1, 2]));
-console.log(middle([1, 2, 3]));
-console.log(middle([1, 2, 3, 4]));
+  // ==== TEST CASE 2: Testing String Array ====
+  it("returns ['you'] for ['hey', 'there', 'you', 'good', 'looking']", () => {
+    assert.deepEqual(middle(['hey', 'there', 'you', 'good', 'looking']), ['you']);
+  });
+  
+  // ===== TEST CASE 3: Testing Array modification =====
+  it("should not modify the original array", () => {
+    const testNumber = [1, 2, 6];
+    const testNumberCopy = [...testNumber]; // Make a copy of testNumber, this is called spread
+    
+    // Call your function but ignore its return for this test.
+    middle(testNumberCopy);
+    assert.deepEqual(testNumberCopy, testNumber, "Original array was modified");
+  });
 
+});
 
-// ===== TEST CASE 1: Testing Number Array =====
-console.log(middle([1, 2, 3, 4])); // => [1, 2, 3, 4]
-assertArraysEqual(middle([1, 2, 3, 4]), [2, 3]); // => [2, 3]
-
-// ==== TEST CASE 2: Testing String Array ====
-console.log(middle(['hey', 'there', 'you', 'good', 'looking']));
-assertArraysEqual(middle(['hey', 'there', 'you', 'good', 'looking']), ['you']);
-
-// ===== TEST CASE 3: testing array modification =====
-const testNumber = [1, 2, 6];
-
-const testNumberCopy = [...testNumber];//makes copy of test number (spread operator, similar to slice)
-console.log(middle(testNumberCopy));
-assertArraysEqual(testNumberCopy, testNumber); // we did not modify the OG array
