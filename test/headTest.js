@@ -1,4 +1,4 @@
-// Import Function
+// Import Functions
 
 const assertEqual = require("../assertEqual");
 const head = require("../head");
