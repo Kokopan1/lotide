@@ -42,3 +42,4 @@ The following functions are currently implemented:
 - `countOnly(...)`: the function reports back how many instances of each string were found in the allItems array of string
 - `takeUntil(...)`: returns a new array of all the data that matches the callback functions requirement
 - `without(...)`: removes specified items from an array
+- `map(...)` : iterated through an array while applying the function
