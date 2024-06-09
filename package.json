@@ -1,6 +1,6 @@
 {
   "name": "@ashleyjn/lotid",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "a mock lodash student project",
   "main": "index.js",
   "directories": {
